@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krishna Kant Shukla — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Caveat:wght@500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Krishna Kant Shukla</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#focus">Focus</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="scene" aria-hidden="true">
+    <div class="sky"></div>
+    <div class="stars"></div>
+    <div class="sun"></div>
+    <div class="moon"></div>
+    <div class="clouds">
+      <span class="cloud c1"></span>
+      <span class="cloud c2"></span>
+      <span class="cloud c3"></span>
+    </div>
+    <div class="fireflies">
+      <span class="firefly"></span>
+      <span class="firefly"></span>
+      <span class="firefly"></span>
+      <span class="firefly"></span>
+      <span class="firefly"></span>
+      <span class="firefly"></span>
+      <span class="firefly"></span>
+      <span class="firefly"></span>
+    </div>
+    <svg class="hills" viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="hill-far" d="M0,140 C240,80 480,180 720,120 C960,60 1200,150 1440,100 L1440,220 L0,220 Z"></path>
+      <path class="hill-near" d="M0,180 C200,140 500,210 760,160 C1000,120 1250,200 1440,150 L1440,220 L0,220 Z"></path>
+    </svg>
+  </div>
+
+  <button id="dayNightToggle" class="toggle-btn" type="button" aria-pressed="false" aria-label="Toggle day and night scene">
+    <span class="toggle-icon">☀️</span>
+  </button>
+
+  <div class="hero-content">
+    <h1>Krishna Kant Shukla</h1>
+    <p class="role">B.Tech CSE student, aspiring Data Analyst, based in Vadodara.</p>
+    <p class="bio">I'm learning to turn data into insights that actually make sense — one concept, one project, one step at a time.</p>
+    <div class="links">
+      <a href="https://github.com/krishnashukla074">GitHub</a>
+      <a href="https://www.linkedin.com/in/krishnakant-shukla-274ba5382/">LinkedIn</a>
+      <a href="mailto:krishnashukla61899@gmail.com">Email</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2 class="section-title">About</h2>
+    <p>I'm a first-year B.Tech Computer Science student at KPGU, Vadodara, with a growing interest in data analytics. I like understanding how things work from the ground up, and I've found that explaining a concept to someone else is usually the best way to learn it myself. Right now, I'm focused on the fundamentals — building a solid base in programming and the tools I'll need for data work.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-list">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">C</span>
+      <span class="skill-tag">C++</span>
+      <span class="skill-tag">HTML</span>
+      <span class="skill-tag">CSS</span>
+    </div>
+    <p class="skills-note">All at a beginner level — I'm actively building on each of these.</p>
+  </div>
+</section>
+
+<section id="focus">
+  <div class="wrap">
+    <h2 class="section-title">What I'm Focused On</h2>
+    <ul class="focus-list">
+      <li class="focus-item">
+        <h3>Programming foundations</h3>
+        <p>Getting comfortable with Python, C, and C++ — syntax, logic, and problem-solving.</p>
+      </li>
+      <li class="focus-item">
+        <h3>Data tools</h3>
+        <p>Starting to explore Excel, Power BI, and Pandas to work with and visualize data.</p>
+      </li>
+      <li class="focus-item">
+        <h3>Communication</h3>
+        <p>Practicing how to explain technical ideas clearly and simply — to others and to myself.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="lead">I'm open to internships, collaborations, or just a conversation about data and learning. Feel free to reach out.</p>
+    <div class="links">
+      <a href="mailto:krishnashukla61899@gmail.com">krishnashukla61899@gmail.com</a>
+      <a href="https://github.com/krishnashukla074">GitHub</a>
+      <a href="https://www.linkedin.com/in/krishnakant-shukla-274ba5382/">LinkedIn</a>
+    </div>
+    <p class="signature">Thanks for stopping by — hope you liked the sky.</p>
+    <p class="meta">© 2026 Krishna Kant Shukla</p>
+  </div>
+</footer>
+
+<script>
+  // Day / night toggle
+  var toggleBtn = document.getElementById('dayNightToggle');
+  toggleBtn.addEventListener('click', function () {
+    var isNight = document.body.classList.toggle('night');
+    toggleBtn.querySelector('.toggle-icon').textContent = isNight ? '🌙' : '☀️';
+    toggleBtn.setAttribute('aria-pressed', String(isNight));
+  });
+
+  // Draw-in underline for section headings when scrolled into view
+  var titles = document.querySelectorAll('.section-title');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    titles.forEach(function (el) { observer.observe(el); });
+  } else {
+    titles.forEach(function (el) { el.classList.add('in-view'); });
+  }
+</script>
+
+</body>
+</html>
